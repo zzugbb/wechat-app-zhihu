@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" class="container-scroll" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="">
+    <view class="search">
+      <view class="search-left">
+        <image class="search-icon" src="../../images/search.png"></image>
+        <input class="search-input" placeholder="搜索话题，问题，人" placeholder-class='search-placeholder'></input>
+      </view>
+      <view class="search-right">
+        <button class="mini-btn" type="primary" size="mini">提问</button>
+      </view>
+    </view>
+    <block wx:for="{{questList}}" wx:for-item="item" wx:key="{{index}}">   
+      <view class="quest-item">
+        <view class="quest-source">
+          <image src="{{item.feed_source_img}}"></image>
+          <text>{{item.feed_source_name}}{{item.feed_source_txt}}</text>
+        </view>
+        <view class="quest-content">
+          <view class='question' bindtap="bindQuestion">
+            <text>{{item.question}}</text>
+          </view>
+          <view class="answer-body" bindtap="bindAnswer">
+            <text class="answer-text">{{item.answer_ctnt}}</text>
+            <view class="answer-action">
+              <text class="support">{{item.good_num}}赞同 · {{item.comment_num}}评论 · 关注问题</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

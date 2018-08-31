@@ -1,0 +1,71 @@
+<!--pages/more/more.wxml-->
+<view class="container">
+  <view class="user"> 
+    <view class="avatar">
+      <open-data type="userAvatarUrl"  class="userinfo-avatar"></open-data>
+    </view>
+    <view class="user-info">
+      <open-data type="userNickName"  class="userinfo-nickname"></open-data>
+      <text class="edit">查看或编辑个人主页</text>
+    </view>
+  </view>
+  <view class="my">
+    <view class="my-item">
+      <view class="myitem-icon" >
+        <image src="../../images/eye.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>我的关注</text>
+      </view>
+    </view>
+    <view class="my-item">
+      <view class="myitem-icon" >
+        <image src="../../images/star.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>我的收藏</text>
+      </view>
+    </view>
+    <view class="my-item">
+      <view class="myitem-icon" >
+        <image src="../../images/draft.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>我的草稿</text>
+      </view>
+    </view>
+    <view class="my-item">
+      <view class="myitem-icon" >
+        <image src="../../images/recent.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>最近浏览</text>
+      </view>
+    </view>
+    <view class="my-item">
+      <view class="myitem-icon" >
+        <image src="../../images/live.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>我的 Live</text>
+      </view>
+    </view>
+    <view class="my-item">
+      <view class="myitem-icon" >
+        <image src="../../images/api.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>接口获取的数据：{{totlePage}}</text>
+      </view>
+    </view>
+    <view class="my-item">
+      <view class="myitem-icon" >
+        <image src="../../images/zhi.png"></image>
+      </view>
+      <view class="myitem-name">
+        <text>我的知乎</text>
+      </view>
+    </view>
+  </view>
+</view>
+

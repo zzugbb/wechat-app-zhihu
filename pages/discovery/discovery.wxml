@@ -1,0 +1,47 @@
+<!--discovery.wxml-->
+<view class="top-tab">
+  <view class="top-tab-item  {{currentNavtab == idx ? 'top-tab-active ' : ''}}"  
+    wx:for="{{navTab}}" wx:for-item="itemName" wx:for-index="idx" bindtap="switchTab" data-idx="{{idx}}" wx:key="{{idx}}">
+    {{itemName}}
+  </view>
+</view>
+
+<view class="container">
+  <swiper class="activity" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="155"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view hidden="{{currentNavtab == 0 ? '' : true}}">
+    <block wx:for="{{questList}}" wx:for-item="item" wx:key="{{index}}">   
+      <view class="quest-item">
+        <view class="quest-source">
+          <image src="{{item.feed_source_img}}"></image>
+          <text>{{item.feed_source_name}}{{item.feed_source_txt}}</text>
+        </view>
+        <view class="quest-content">
+          <view class='question' bindtap="bindQuestion">
+            <text>{{item.question}}</text>
+          </view>
+          <view class="answer-body" bindtap="bindAnswer">
+            <text class="answer-text">{{item.answer_ctnt}}</text>
+            <view class="answer-action">
+              <text class="support">{{item.good_num}}赞同 · {{item.comment_num}}评论 · 关注问题</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="tab-view" hidden="{{currentNavtab == 1 ? '' : true}}">
+    <text>圆桌</text>
+  </view>
+  <view class="tab-view" hidden="{{currentNavtab == 2 ? '' : true}}">
+    <text>热门</text>
+  </view>
+  <view class="tab-view" hidden="{{currentNavtab == 3 ? '' : true}}">
+    <text>收藏</text>
+  </view>
+</view>
