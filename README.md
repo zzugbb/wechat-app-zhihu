@@ -1,4 +1,9 @@
 # wechat-app-zhihu
+
+![](https://img.shields.io/badge/language-wxml-red.svg)
+![](https://img.shields.io/badge/license-MIT-blue.svg)
+![](https://img.shields.io/badge/repo%20size-960KB-green.svg)
+
 微信小程序练习-知乎
 
 ## 使用
